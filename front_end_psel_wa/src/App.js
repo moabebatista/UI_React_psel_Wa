@@ -1,9 +1,9 @@
-import './App.css';
 import { useEffect, useState } from 'react';
-import Tabela from './componentes/Tabela';
+import './App.css';
+import alertError from './assets/alert.svg';
 import Header from './componentes/Header';
 import InputPesquisar from './componentes/InputPesquisar';
-import alertError from './assets/alert.svg';
+import Tabela from './componentes/Tabela';
 
 function App() {
   const [alunos, setAlunos] = useState([]);
@@ -23,6 +23,7 @@ function App() {
 
     const data = await response.json();
     setLoading(false);
+    console.log(data);
     setAlunos(data);
 
     } catch (error) {

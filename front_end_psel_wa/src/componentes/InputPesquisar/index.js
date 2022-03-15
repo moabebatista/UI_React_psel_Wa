@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css';
 
-function InputPesquisar({setAlunos, setLoading, pesquisar, setPesquisar, setErrorPesquisa}) {
+function InputPesquisar(
+    {
+        setAlunos, 
+        setLoading, 
+        pesquisar, 
+        setPesquisar, 
+        setErrorPesquisa
+    }) {
 
     const [alunoPesquisado, setAlunoPesquisado] = useState("");
     
@@ -31,6 +38,13 @@ function InputPesquisar({setAlunos, setLoading, pesquisar, setPesquisar, setErro
           }
     }
 
+    function pesquisarAluno() {
+        if(alunoPesquisado === "") {
+            return;
+        }
+        setPesquisar(true);
+    }
+
     return (
         <div 
             className="filtrar-alunos"
@@ -42,7 +56,7 @@ function InputPesquisar({setAlunos, setLoading, pesquisar, setPesquisar, setErro
                 value={alunoPesquisado}
                 onChange={(e) => setAlunoPesquisado(e.target.value)} 
             />
-            <button onClick={() => setPesquisar(true)}>
+            <button onClick={() => pesquisarAluno()}>
                 Pesquisar
             </button>
         </div>
