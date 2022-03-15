@@ -37,34 +37,40 @@ body {
   justify-content: center;
   margin: 30px;
 }
-.filtrar-alunos {
-  position: relative;
-}
 
-.buscar {
+.filtrar-alunos .buscar, .filtrar-alunos button {
   all: unset;
+  border: solid 0.1px #555555;
+  padding: 5px 10px;
+} 
+
+.filtrar-alunos .buscar {
   display: flex;
   text-align: left;
-  padding-left: 15px;
   width: 470px;
   height: 35px;
-  border-radius: 20px;
-  border: solid 1px #000000;
+  border-radius: 20px 0px 0px 20px;
+  border-right: none;
 }
 
-.filtrar-alunos img {
-  width: 25px;
-  height: 25px;
-
-  position: absolute;
-  right: 325px;
-  top: 6px;
+.filtrar-alunos button {
+  background: linear-gradient(91.26deg, #05EDE3 0%, #3A9FF1 97.77%);;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 0px 20px 20px 0px;
+  border-left: none;
   cursor: pointer;
+}
+
+.filtrar-alunos button:hover {
+  background: linear-gradient(91.66deg, #FA8C10 0%, #FF576B 90.32%);
 }
 
 .tabela-alunos {
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 .aluno-resume-tr {
   box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);

@@ -1,6 +1,14 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import lupaSvg from './assets/icone-lupa.svg'
+
+function formataCpf (cpf) {
+  let cpfFormatdo = 
+  `${cpf.slice(0, 3)}.
+  ${cpf.slice(3, 6)}.
+  ${cpf.slice(6, 9)}-
+  ${cpf.slice(9, 11)}`
+  return cpfFormatdo; 
+}
 
 function App() {
   const [alunos, setAlunos] = useState([]);
@@ -11,7 +19,7 @@ function App() {
 
   async function handleAlunos() {
     try {
-      const response = await fetch('http://localhost:3000/alunos', {
+      const response = await fetch('http://localhost:3333/alunos', {
       method: 'GET'
       });
 
@@ -36,7 +44,9 @@ function App() {
           placeholder="digite o nome, cpf ou email que deseja pesquisar."
           type="text" 
         />
-        <img src={lupaSvg} alt="ícone-lupa" />
+        <button>
+          Pesquisar
+        </button>
       </div>
 
      <div className="tabela-alunos">
@@ -70,7 +80,7 @@ function App() {
             <td
               className="aluno-resume-line-td"
             >
-              {aluno.cpf}
+              {formataCpf(aluno.cpf)}
             </td>
             <td
               className="aluno-resume-line-td"
