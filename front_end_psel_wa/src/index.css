@@ -40,3 +40,20 @@ code {
     transform: rotate(1turn);
   }
 }
+.card-error-pesquisa {
+  background-color: #e5e5e5;
+  width: 420px;
+  height: 420px;
+  border-radius: 15px;
+  position: fixed;
+  top: 200px;
+  right: 0;
+  left: 400px;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.card-error-pesquisa img {
+  width: 400px;
+  height: 400px;
+}
