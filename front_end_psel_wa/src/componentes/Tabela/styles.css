@@ -1,0 +1,22 @@
+.tabela-alunos {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .aluno-resume-tr {
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .aluno-resume-th, .aluno-resume-line-td {
+    width: 300px;
+    height: 45px;
+  }
+  
+  .aluno-resume-th {
+    background: #FAFAFA;
+  }
+  
+  .aluno-resume-line-td {
+    border-bottom: 1px solid #E0E0E0;
+  }

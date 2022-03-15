@@ -1,17 +1,12 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-
-function formataCpf (cpf) {
-  let cpfFormatdo = 
-  `${cpf.slice(0, 3)}.
-  ${cpf.slice(3, 6)}.
-  ${cpf.slice(6, 9)}-
-  ${cpf.slice(9, 11)}`
-  return cpfFormatdo; 
-}
+import Tabela from './componentes/Tabela';
+import Header from './componentes/Header';
+import InputPesquisar from './componentes/InputPesquisar';
 
 function App() {
   const [alunos, setAlunos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     handleAlunos()
@@ -24,6 +19,7 @@ function App() {
       });
 
     const data = await response.json();
+    setLoading(false);
     setAlunos(data);
 
     } catch (error) {
@@ -33,65 +29,15 @@ function App() {
   
   return (
     <div className="App">
-      <header className="cabecalho">
-        <span className="gradient">
-          Psel Wa
-        </span>
-      </header>
-      <div className="filtrar-alunos">
-        <input 
-          className="buscar"
-          placeholder="digite o nome, cpf ou email que deseja pesquisar."
-          type="text" 
+      <Header />
+      <InputPesquisar />
+      {loading ? 
+        <div className="c-loader"></div>
+        :
+        <Tabela 
+        alunos={alunos}
         />
-        <button>
-          Pesquisar
-        </button>
-      </div>
-
-     <div className="tabela-alunos">
-     <thead className="header-tabela-alunos">
-        <tr className="aluno-resume-tr">
-          <th 
-            className="aluno-resume-th">
-              Nome
-          </th>
-          <th 
-            className="aluno-resume-th">
-              CPF
-          </th>
-          <th 
-            className="aluno-resume-th">
-              Email
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {alunos.map((aluno) => (
-          <tr 
-            className="aluno-resume-line-tr"
-            key={aluno.id} 
-          >
-            <td
-              className="aluno-resume-line-td"
-            >
-              {aluno.nome}
-            </td>
-            <td
-              className="aluno-resume-line-td"
-            >
-              {formataCpf(aluno.cpf)}
-            </td>
-            <td
-              className="aluno-resume-line-td"
-            >
-              {aluno.email}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-     </div>
-      
+      }
     </div>
   );
 }

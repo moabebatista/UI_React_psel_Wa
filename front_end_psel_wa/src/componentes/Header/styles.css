@@ -1,0 +1,20 @@
+.gradient {
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.cabecalho {
+    background: linear-gradient(91.66deg, #d8ccbe 0%, #181616 90.32%);
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px, 50px;
+    min-width: 100vw;
+}
+  
+.cabecalho span {
+    margin: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
