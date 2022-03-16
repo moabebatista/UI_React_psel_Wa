@@ -35,7 +35,6 @@ function App() {
 
     const data = await response.json();
     setLoading(false);
-    console.log(data);
     setAlunos(data);
 
     } catch (error) {

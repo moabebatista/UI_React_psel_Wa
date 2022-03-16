@@ -12,6 +12,11 @@
     width: 300px;
     height: 45px;
   }
+
+  .corpo-tabela {
+    display: flex;
+    flex-direction: column;
+  }
   
   .aluno-resume-th {
     background: #FAFAFA;
@@ -19,4 +24,26 @@
   
   .aluno-resume-line-td {
     border-bottom: 1px solid #E0E0E0;
+  }
+  .button-sair {
+    all: unset;
+    background: linear-gradient(91.26deg, #FA8C10 0%, #FF57D3 97.77%);
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+    margin-top: 15px;
+    width: 100px;
+    height: 25px;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    cursor: pointer;
+  }
+  .button-sair:hover {
+    background: linear-gradient(91.26deg, #05EDE3 0%, #3A9FF1 97.77%);
   }

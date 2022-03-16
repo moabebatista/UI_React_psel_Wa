@@ -13,7 +13,10 @@ function InputPesquisar(
     const [alunoPesquisado, setAlunoPesquisado] = useState("");
     
     useEffect(() => { 
-        handlePesquisa();    
+        if(alunoPesquisado !== '') {
+            handlePesquisa(); 
+        }
+           return;
     },[pesquisar]);
 
     async function handlePesquisa() {
@@ -39,6 +42,9 @@ function InputPesquisar(
     }
 
     function pesquisarAluno() {
+        if(alunoPesquisado === "") {
+            return;
+        }
         setPesquisar(true);
     }
 
@@ -54,7 +60,7 @@ function InputPesquisar(
                 onChange={(e) => setAlunoPesquisado(e.target.value)} 
             />
             <button onClick={() => pesquisarAluno()}>
-                Pesquisar
+                <span>Pesquisar</span>
             </button>
         </div>
     )

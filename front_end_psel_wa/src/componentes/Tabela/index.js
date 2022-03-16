@@ -24,7 +24,7 @@ function Tabela({alunos}) {
                     </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className="corpo-tabela">
             {alunos.map((aluno) => (
                 <tr 
                     className="aluno-resume-line-tr"
@@ -47,7 +47,15 @@ function Tabela({alunos}) {
                     </td>
                 </tr>
             ))}
+                <button
+                    onClick={() => window.location.reload()}
+                    style={alunos.length === 1 ? {display: 'flex'} : {display: 'none'}}
+                    className="button-sair"
+                >
+                    Voltar
+                </button>
             </tbody>
+         
         </div>
     )
 }
