@@ -19,7 +19,7 @@ function InputPesquisar(
     async function handlePesquisa() {
         try {
             const response = await fetch(`http://localhost:3333/alunos/${alunoPesquisado}`, {
-            method: 'GET'
+                method: 'GET'
             });
       
           const data = await response.json();
@@ -39,9 +39,6 @@ function InputPesquisar(
     }
 
     function pesquisarAluno() {
-        if(alunoPesquisado === "") {
-            return;
-        }
         setPesquisar(true);
     }
 

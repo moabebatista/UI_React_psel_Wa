@@ -15,10 +15,22 @@ function App() {
     handleAlunos();
   },[])
 
+  useEffect(() => {
+    if(errorPesquisa) {
+      const timeout = setTimeout(() => {
+        window.location.reload();
+      }, 3500);
+
+      return () => {
+        clearTimeout(timeout);
+      }   
+    }
+  },[errorPesquisa])
+
   async function handleAlunos() {
     try {
       const response = await fetch(`http://localhost:3333/alunos`, {
-      method: 'GET'
+        method: 'GET'
       });
 
     const data = await response.json();
@@ -53,12 +65,16 @@ function App() {
           >
             <img src={alertError} alt="error" />
       </div>}
-      {loading ? 
-        <div className="c-loader"></div>
-        :
-        <Tabela 
-          alunos={alunos}
-        />
+      {loading && 
+        <div className='loading'>
+          <div className="c-loader"></div>
+          <span>Loading...</span>
+        </div>
+      }
+      { !errorPesquisa &&
+         <Tabela 
+         alunos={alunos}
+       />
       }
     </div>
   );

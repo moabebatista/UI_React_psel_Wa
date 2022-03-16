@@ -24,6 +24,11 @@ code {
   align-items: center;
 }
 
+.loading {
+  position: fixed;
+  top: 350px;
+}
+
 .c-loader {
   display: flex;
   justify-content: center;
@@ -31,8 +36,9 @@ code {
   border: 6px solid #e5e5e5;
   border-top-color: #51d4db;
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 70px;
+  width: 70px;
+
 }
 
 @keyframes is-rotating {
@@ -40,16 +46,16 @@ code {
     transform: rotate(1turn);
   }
 }
+
 .card-error-pesquisa {
+  display: flex;
+  justify-content: center;
   background-color: #e5e5e5;
   width: 420px;
   height: 420px;
   border-radius: 15px;
   position: fixed;
   top: 200px;
-  right: 0;
-  left: 400px;
-  bottom: 0;
   cursor: pointer;
 }
 
